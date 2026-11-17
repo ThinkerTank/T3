@@ -1,0 +1,20 @@
+sequenceDiagram
+  actor Operator
+  participant UI as Swing Main
+  participant Sim as Simulation
+  participant Index as HashTable / Heap / BST
+  participant Graph as Graph
+  Operator->>UI: Select incident and suggest unit
+  UI->>Sim: recommend(incidentId)
+  Sim->>Index: lookup incident and scan compatible units
+  Sim->>Graph: dijkstra(vehicle, incident)
+  Graph-->>Sim: route cost
+  Sim-->>UI: candidate
+  Operator->>UI: Confirm assignment
+  UI->>Sim: assign(incident, vehicle)
+  Sim->>Index: validate and remove from FIFO
+  Sim-->>UI: status EN_ROUTE
+  Operator->>UI: Resolve
+  UI->>Sim: resolve(incidentId)
+  Sim->>Index: remove from hash/BST/heap
+  Sim-->>UI: points and updated counts

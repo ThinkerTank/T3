@@ -1,0 +1,29 @@
+classDiagram
+  class Main {+main(args) +refresh()}
+  class Simulation {+register(type,severity,location,description) +assign(incidentId,vehicleId) +recommend(incidentId) +resolve(incidentId) +tick() +move(dx,dy) +undo()}
+  class Incident {+id +type +severity +location +status +vehicleId}
+  class Vehicle {+id +type +location +status +compatible(type)}
+  class Graph~T~ {+bfs(start) +dfs() +dijkstra(start) +floydWarshall() +primMST(start) +kruskalMST()}
+  class LinkedList~T~
+  class Stack~T~
+  class Queue~T~
+  class HashTable~K,V~
+  class PriorityQueue~T~
+  class BinarySearchTree~T~
+  class ConfigurationLoader {+load(dir)}
+  class StateStore {+save(sim,path) +load(path)}
+  Main --> Simulation
+  Simulation --> Incident
+  Simulation --> Vehicle
+  Simulation --> Graph
+  Simulation --> Stack
+  Simulation --> Queue
+  Simulation --> HashTable
+  Simulation --> PriorityQueue
+  Simulation --> BinarySearchTree
+  Stack --> LinkedList
+  Queue --> LinkedList
+  HashTable --> LinkedList
+  Graph --> LinkedList
+  ConfigurationLoader --> Simulation
+  StateStore --> Simulation

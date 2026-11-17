@@ -1,0 +1,34 @@
+{
+  "vehicles": [
+    {
+      "id": "AMB-1",
+      "type": "AMBULANCE",
+      "location": 3
+    },
+    {
+      "id": "AMB-2",
+      "type": "AMBULANCE",
+      "location": 35
+    },
+    {
+      "id": "PAT-1",
+      "type": "PATROL",
+      "location": 27
+    },
+    {
+      "id": "PAT-2",
+      "type": "PATROL",
+      "location": 50
+    },
+    {
+      "id": "FIR-1",
+      "type": "FIRE_TRUCK",
+      "location": 60
+    },
+    {
+      "id": "FIR-2",
+      "type": "FIRE_TRUCK",
+      "location": 7
+    }
+  ]
+}
